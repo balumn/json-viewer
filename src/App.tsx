@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { formatContent } from "./format/formatContent";
-    import { FormatError, type FormatResult } from "./format/types";
+import { FormatError, type FormatResult } from "./format/types";
 import { normalizeNewlines, stripBOM } from "./format/utils";
 import { HighlightedTextarea } from "./components/HighlightedTextarea";
 import { computeFindMatches, type FindMatch } from "./find/findMatches";
@@ -72,6 +72,7 @@ async function copyToClipboard(text: string): Promise<void> {
 }
 
 export function App() {
+  const baseUrl = import.meta.env.BASE_URL;
   const [theme, setTheme] = useState<Theme>(() => getDefaultTheme());
   const [showLineNumbers, setShowLineNumbers] = useState(false);
   const [showShortcuts, setShowShortcuts] = useState(false);
@@ -293,7 +294,10 @@ export function App() {
     <div className="app">
       <header className="toolbar">
         <div className="toolbar-left">
-          <div className="brand">json-viewer</div>
+          <div className="brand">
+            <img className="brand-icon" src={`${baseUrl}icon.svg`} alt="" aria-hidden="true" />
+            <span className="brand-text">json-viewer</span>
+          </div>
           <div className="hint">
             {result.label}
             {showShortcuts ? (
