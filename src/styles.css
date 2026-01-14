@@ -82,6 +82,9 @@ body {
 
 .brand-text {
   line-height: 1;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 650;
 }
 
 .hint {

@@ -296,7 +296,7 @@ export function App() {
         <div className="toolbar-left">
           <div className="brand">
             <img className="brand-icon" src={`${baseUrl}icon.svg`} alt="" aria-hidden="true" />
-            <span className="brand-text">json-viewer</span>
+            <h1 className="brand-text">JSON Formatter</h1>
           </div>
           <div className="hint">
             {result.label}

@@ -11,16 +11,20 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.svg"],
+      includeAssets: ["favicon.svg", "icon.svg", "og-image.svg", "robots.txt", "sitemap.xml"],
       manifest: {
-        name: "json-viewer",
-        short_name: "json-viewer",
-        description: "Content-aware formatter for JSON, XML, and code snippets.",
+        name: "JSON Formatter & Viewer",
+        short_name: "JSON Formatter",
+        description:
+          "Free online JSON Formatter & JSON Viewer. Beautify, validate, and search JSON locally in your browser. Simple and easy to use.",
         theme_color: "#0b0f17",
         background_color: "#ffffff",
         display: "standalone",
         // Relative path so it works under GitHub Pages base path (/<repo>/)
-        icons: [{ src: "favicon.svg", sizes: "any", type: "image/svg+xml" }]
+        icons: [
+          { src: "favicon.svg", sizes: "any", type: "image/svg+xml", purpose: "any maskable" },
+          { src: "icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any maskable" }
+        ]
       },
       workbox: {
         // Relative so fallback stays within the service worker scope (incl. GitHub Pages base path)
