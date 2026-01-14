@@ -1,4 +1,45 @@
 # json-viewer (Content-Aware Formatter)
+
+## Quickstart (Development)
+
+### Prereqs
+
+- Node.js 18+ (recommended: latest LTS)
+
+### Install + run
+
+```bash
+npm install
+npm run dev
+```
+
+Then open the local URL printed by Vite.
+
+## Deploy (GitHub Pages)
+
+This project is configured to deploy automatically to **GitHub Pages** on every push to the `main` branch via `.github/workflows/deploy-pages.yml`.
+
+### One-time repo setting
+
+In your GitHub repo:
+
+- Go to **Settings → Pages**
+- Under **Build and deployment**, set **Source** to **GitHub Actions**
+
+After that, push to `main` (or run the workflow manually from the **Actions** tab). The workflow will publish the `dist/` folder.
+
+### Usage
+
+- Paste content into **Input**
+- Press **Format** (or **Ctrl/Cmd + Enter**)
+- Switch to **Output** (auto-switches after formatting)
+- Use **Copy output** to copy the formatted result
+
+### Notes
+
+- Client-only: all formatting runs locally in your browser; nothing is sent anywhere.
+- Offline after load: the app registers a small service worker so it works after the first load.
+
 ## 1. Introduction
 
 ### 1.1 Purpose
